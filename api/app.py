@@ -1,9 +1,11 @@
 from flask import Flask, flash, jsonify, Response, request
+from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.dialects import postgresql
 from .custom_json_encoder import CustomJSONEncoder
 
 app = Flask(__name__)
+CORS(app)
 app.json_encoder = CustomJSONEncoder
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://vdrkvhwmqplhdl:8356aaca74d20d83834993f62e6d67a89ec738e93850333e42b3dd666bf5124f@ec2-3-221-243-122.compute-1.amazonaws.com:5432/dai0k1egvf2bcu'
 app.secret_key = b'\x19\x15\xb9\xa5\x8e\xa7\xb5b\x08\x1d\xb1g\x0cne\x0f'
