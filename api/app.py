@@ -66,7 +66,7 @@ def get_all_analytics():
         except KeyError:
             flash('Please enter all fields', 'error')
 
-        if original_date and taken_date and completed and pill_names and pill_quantities:
+        if original_date and taken_date and pill_names and pill_quantities:
             analytic = Analytic(original_date, taken_date,
                                 completed, pill_names, pill_quantities)
             db.session.add(analytic)
